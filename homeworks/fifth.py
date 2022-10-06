@@ -11,10 +11,11 @@ class Team:
         print("-- Developer létrehozva --")
         return self.nev + " a " + str(self.projekt) + "-en dolgozik " + str(self.szerepkor) + " szerepkörben."
 
-
-    def __eq__(self, other): ##################?
-        print(self.nev + " és " + other.nev + " dolgoznak egy projekten.")
-        return str(self.projekt == other.projekt)
+    def __eq__(self, other):
+        if self.projekt == other.projekt:
+            return self.nev + " és " + other.nev + " dolgoznak egy projekten."
+        else:
+            return ""
 
 
 if __name__ == "__main__":
@@ -27,3 +28,6 @@ if __name__ == "__main__":
     print(angela)
     print(peti)
     print(eva)
+
+    print(ricsi == angela)  # Teszt hamisra
+    print(eva == peti)  # Teszt igazra
