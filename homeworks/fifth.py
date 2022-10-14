@@ -30,13 +30,13 @@ def sameproject(team):
 
 if __name__ == "__main__":
     ricsi = Team("Ricsi", "SolArch", "Frontend")
-    angela = Team("Angéla", "ZerTeng", "Tesztelő")
-    peti = Team("Peti", "KefERP", "Backend")
-    eva = Team("Éva", "KefERP", "Frontend")
-
     print(ricsi)
+    angela = Team("Angéla", "ZerTeng", "Tesztelő")
     print(angela)
+    peti = Team("Peti", "KefERP", "Backend")
     print(peti)
+    eva = Team("Éva", "KefERP", "Frontend")
     print(eva)
+    
     csipetcsapat = (ricsi, angela, peti, eva)
     sameproject(csipetcsapat)
