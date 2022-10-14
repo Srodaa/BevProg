@@ -12,10 +12,20 @@ class Team:
         return self.nev + " a " + str(self.projekt) + "-en dolgozik " + str(self.szerepkor) + " szerepkörben."
 
     def __eq__(self, other):
-        if self.projekt == other.projekt:
-            return self.nev + " és " + other.nev + " dolgoznak egy projekten."
-        else:
+        if self.nev == other.nev:
             return ""
+        return self.projekt == other.projekt
+
+
+def sameproject(team):
+    parok = []
+    for i in team:
+        for j in team:
+            if i.projekt == j.projekt and i.nev != j.nev:
+                if (i.nev, j.nev) not in parok and (j.nev, i.nev) not in parok:
+                    parok.append((i.nev, j.nev))
+    for i in parok:
+        print("\n" + i[0] + " és " + i[1] + " egy projekten dolgoznak.")
 
 
 if __name__ == "__main__":
@@ -28,6 +38,5 @@ if __name__ == "__main__":
     print(angela)
     print(peti)
     print(eva)
-
-    print(ricsi == angela)  # Teszt hamisra
-    print(eva == peti)  # Teszt igazra
+    csipetcsapat = (ricsi, angela, peti, eva)
+    sameproject(csipetcsapat)
