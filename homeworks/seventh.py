@@ -12,11 +12,11 @@ def Palindrom(mondat):
     sz3 = ""
     counter = 0
 
-    for i in mondat:  # Kiszedi a speciális karaktereket és a szóközt, majd átadja kisebetűsen a sz-nek.
+    for i in mondat:
         if i not in string.punctuation and i != " ":
             sz += i.lower()
 
-    for i in sz:  # Ha nincs benne ékezet továbbadja a szoveg2nek, ha van benne akkor pedig kicseréli.
+    for i in sz:
         if i not in "áéíóöőúüű":
             sz2 += i
         else:
