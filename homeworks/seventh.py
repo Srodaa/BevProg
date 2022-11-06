@@ -41,8 +41,7 @@ def Palindrom(mondat):
         else:
             sz3 += sz2[counter]
         counter += 1
-    print(sz2)
-    print(sz3[::-1])
+
     if sz2 == sz3[::-1]:
         print("Ez a mondat egy palindróm!")
     else:
