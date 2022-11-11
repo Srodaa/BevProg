@@ -23,8 +23,8 @@ def hazi():
         for i in irasjelNelkuli:
             if i not in mgh:
                 mghNelkuli += i
+                
     lines = list(mghNelkuli.split("\n"))
-    print(lines)
     with open("kimenet.txt", "w", encoding="utf-8") as file:
         for number, line in enumerate(lines):
             if (number + 1) % 3 == 0:
