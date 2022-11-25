@@ -1,5 +1,5 @@
-import datetime
-
+#!/usr/bin/env python
+# coding: utf8
 
 def Beolvas():
 
@@ -19,7 +19,6 @@ def Beolvas():
             mydict["mufaj"] = i[2]
             mydict["hossz"] = int(i[3])
             lista1.append(mydict)
-
         return lista1
 
 
@@ -38,15 +37,15 @@ def teljes_hossz(beolvas):
 
 def leghosszabb_rockzene(beolvas):
     lista = []
+    for i in beolvas:
+        if i["mufaj"] == "rock":
+            lista.append(i["hossz"])
+
+    leg = max(lista)
     leghosszabb = ""
     for i in beolvas:
-        if i['mufaj'] == 'rock':
-            rockzene = i['cim']
-            lista.append(rockzene)
-    max_len = len(max(lista))
-    for i in range(len(lista)):
-        if max_len == len(lista[i]):
-            leghosszabb = lista[i]
+        if i["hossz"] == leg:
+            leghosszabb = i["cim"]
 
     with open("03_leghosszabb_rock.txt", "w", encoding="utf-8") as f:
         f.write(leghosszabb)
